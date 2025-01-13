@@ -1,0 +1,89 @@
+title Bug Wrangler Ranch
+
+participant Main
+
+participant Cattle
+participant Drovers
+participant Database
+participant Journey
+participant utils
+
+entryspacing 1.0
+Main->Cattle:Read const { roundup } = require("./cattle.js") to get function information from ./cattle.js
+
+
+
+Main<--Cattle: function is for of listing all types of cattle
+Main->Drovers:Read const { hireDrovers } = require("./drovers.js")to get function information from ./drovers.js
+
+Main<--Drovers:function is for number of drovers needed
+
+Main->Journey:Read const { journeyMaker } = require("./journey.js") to get journeys function information
+
+Main<--Journey:function for number of areas
+
+note right of Main: Created cattleToDrive variable which stores number 50
+
+Main -> Drovers: Created variable drovers containing function hireDrovers(cattleToDrive)
+
+Drovers->Database:Reads const { database } = require("./database.js") to get all drovers array information directly from the object database
+
+Drovers<--Database:information is the whole database object
+
+loop 
+Main<--Drovers:for loop that iteriates database for drovers and then returns them in a array
+end
+
+
+Main-> Cattle: Created variable cattle containing function roundUp()
+Cattle->Database:Reads const { database } = require("./database.js") to get all Cattles array information directly from the object database
+
+Cattle<--Database:information is the whole database object
+loop 
+Main<--Cattle:for loop that iteriates database for cattleTypes and then returns them in a array
+end
+
+Main-> Journey: Created variable journey containing function journeyMaker()
+
+Journey->utlis:read  const { randomize } = require("./utils.js")to get randomize function
+
+Journey<--utlis: returns randomize function for return statement
+
+loop
+Main<--Journey: takes 4 functions to create  4 different area objects then loops over each area function  seperately and returns them as an areas array
+end
+
+note right of Main: Created Kansas Slims Cattle title surrounded by * symbols
+
+note right of Main: Created picture of cows and grass using symbols
+
+note right of Main:Display number of drovers.size using drovers variable, and console.logged cattleToDrive to describe how many cattle on the journey
+
+note right of Main:Display message of: The herd is made of the following cattle breeds
+
+loop 
+note right of Main:for loop that reads the variable cattle to invoke the function roundup() to get the information to display cattles.breed of all cattle.
+end
+
+note right of Main:Display message about the team of drovers you will be joining
+
+loop 
+note right of Main: for loop that reads the variable to invoke the function of hireDrovers(cattleToDrive) which gets the drovers first and last name information and displays it
+end
+
+loop 
+note right of Main:for loop that reads the variable journey to invoke the function of journeyMaker() which gets the information of all the areas array
+end
+
+
+note right of Main:Display message about the areas you will be traveling through
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,16 @@
 const { database } = require("./database.js")
 
-const roundup = (herdSize) => {
-    const cattle = []
-    const types = database.cattleTypes
+const roundup = (types) => {
+    let cattle = []
+    types = database.cattleTypes, []
 
-    for (let counter = 0; counter < size; counter++) {
+    for (let counter = 0; counter < 0; counter++) {
         const randomType = Math.floor(Math.random() * types.length)
-        const animal = types[randomType]
+        const animal = types(randomType)
         cattle.push(animal)
     }
 
-    return cattle
+    return types
 }
 
 module.exports = { roundup }

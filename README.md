@@ -76,11 +76,17 @@ Your journey will take you through the wildness of the American Midwest and acro
 ```
 
 1. In the **main** module, one of the first lines of code is `const drovers = hireDrovers(cattleToDrive)`. Explain what the value of the `drovers` variable is when that line of code runs.
-   > Your answer here
+   
+   > Drovers is a variable that holds the function hireDrovers(cattleToDrive), with cattleToDrive being the parameter of the function.
+
 2. At the bottom of the main module, you will see the following code - `for (const drover of drovers)`. Explain what the values of both the `drover` and the `drovers` variables are.
-   > Your answer here
+   
+   > drover is a variable that will store each of the objects in drovers array and drovers is a function that returns the drovers array.
+
 3. In the **journey** module, there is a `journeyMaker()` function. In that function, there is a variable named `areas` which will have the value of an object. Use your debugger to show what the value of each key is on that object. Use [Loom](https://www.loom.com) to record your session.
-   > Your public Loom URL here
+   
+   > https://www.loom.com/share/063ad2e8a845434080954ddaa445f6c1
+
 4. Also in the **journey** module, there is the following code:
    ```js
    for (let forestNumber = 0; forestNumber < areas.forests; forestNumber++) {
@@ -88,11 +94,16 @@ Your journey will take you through the wildness of the American Midwest and acro
    }
    ```
    Explain this code with your best vocabulary.
-   > Your answer here
+   > This is a for loop where forestNumber = 0 and we want forestNumber to stop before it reachs the value of areas.forests.
+   forestNumber is also incrementing by one at every iteriation. Inside the for loop areas.forest has a value of 1 so the for loop iteriates one time before stopping. After forestNumber = 1 and area.forests = 1 the iteriation stops and moves to the next line of code. Then it reads journey.push("forest") which pushes the string "forest" into the array journey.
+
 5. Explain the value of the `database` variable in the **database** module. Be as comprehensive as possible.
-   > Your answer here
+
+   > The database variable is an object with two nested arrays inside of it, cattleType and drovers. cattleType has 4 nested objects inside of it describing cattle by id and breed. drovers has 50 nested objects inside of it describing drovers by id, first_name, last_name, and gender.
+
 6. In the **drovers** module, there is a `hireDrovers()` function. You will notice the following code on that line - `(herdSize)`. What is that defining, and where does it get its value?
-   > Your answer here
+
+   > That is defining the number of drovers(50), and its getting its value from ./main.js variable cattleToDrive = 50.
 
 ## When You Are Done
 
